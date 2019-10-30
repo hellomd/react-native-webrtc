@@ -13,7 +13,8 @@ public class WebRTCModulePackage implements ReactPackage {
     public List<NativeModule> createNativeModules(
             ReactApplicationContext reactContext) {
         return Arrays.<NativeModule>asList(
-            new WebRTCModule(reactContext)
+            new WebRTCModule(reactContext),
+            new WebRTCAudioSessionModule(reactContext)
         );
     }
 
