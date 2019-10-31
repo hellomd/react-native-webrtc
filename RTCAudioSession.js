@@ -14,4 +14,8 @@ export default class RTCAudioSession {
   static setMode(mode) {
     WebRTCAudioSessionModule.setMode(mode);
   }
+
+  static setLoudspeakerOn() {
+    WebRTCAudioSessionModule.setLoudspeakerOn();
+  }
 }
