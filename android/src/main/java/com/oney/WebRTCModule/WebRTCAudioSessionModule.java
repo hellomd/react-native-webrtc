@@ -12,10 +12,10 @@ import com.facebook.react.module.annotations.ReactModule;
 public class WebRTCAudioSessionModule extends ReactContextBaseJavaModule {
     private AudioManager audioManager;
 
-    public WebRTCAudioSessionModule(ReactApplicationContext reactContext) {
-        super(reactContext);
+    public WebRTCAudioSessionModule(ReactApplicationContext context) {
+        super(context);
 
-        audioManager = ((AudioManager) reactContext.getSystemService(Context.AUDIO_SERVICE));
+        this.audioManager = ((AudioManager) context.getSystemService(Context.AUDIO_SERVICE));
     }
 
     @Override
@@ -29,8 +29,10 @@ public class WebRTCAudioSessionModule extends ReactContextBaseJavaModule {
 
     @ReactMethod
     public void setLoudspeakerOn() {
+        this.audioManager.setMode(AudioManager.MODE_IN_COMMUNICATION);
+
         if (!audioManager.isSpeakerphoneOn())  {
-            audioManager.setSpeakerphoneOn(true);
+            this.audioManager.setSpeakerphoneOn(true);
         }
     }
 }
