@@ -26,7 +26,9 @@ GN_COMMON_ARGS = [
     'is_component_build=false',
     'rtc_libvpx_build_vp9=true',
     'is_debug=%s',
-    'target_cpu="%s"'
+    'target_cpu="%s"',
+    'ffmpeg_branding="Chrome"',
+    'rtc_use_h264=true'
 ]
 
 _GN_IOS_ARGS = [
